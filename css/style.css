@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 
+:root é bom para armazenar variáveis globais, reduzindo o esforço de ter que mudar 
+tudo na mão depois, podendo utilizar apenas o conceito de "var(--variavel)" 
+*/
+:root{
+    --background: #000F08;
+    --text: #FFFFFF;
+    --secondary: #888888;
+    /* possíveis accent: 
+    #00FF66 
+    #FFB000
+    #00E5FF
+    #8AF3FF 
+    #00ffff
+    */
+    --accent: #00FF66;
+    --error: #ff003c;
+    
+}
+
+
+/* 
+The Fallout Amber: Background #050505, Text/Foreground #FFB000, Glow/Highlight #FFD15C
+The Matrix Green: Background #000B00, Text/Foreground #00FF66, Dim/Border #003B11
+The IBM 3278 Blue: Background #001122, Text/Foreground #00FFFF, Accent #88FFFF
+*/
+
+body{
+    /* 
+    Cor do fundo do corpo da página. Opções que preferidas: 
+    #000000 (preto) e #000F08 (preto esverdeado, "night")  
+    */
+    background-color: var(--background); 
+    /* Sugestão de color: #33FF33 ou #00FF66 */
+    color: var(--text);
+    font-family: monospace;
+    padding: 40px;
+}
+
+header{
+    margin-bottom: 80px;
+}
+
+header h1{
+    font-size: 48px;
+    letter-spacing: 6px;
+}
+
+/* Sugestão de color: #008833*/
+header p {
+    margin-top: 10px;
+    color: var(--secondary);
+    letter-spacing: 3px;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 4px;
+    color: var(--accent);
+}
+
+.system-panel h2{
+    margin-bottom: 30px;
+    font-size: 24px;
+    letter-spacing: 5px;
+    color: var(--text);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.system-panel:hover{
+    border-color: rgba(0, 255, 102, 0.5);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+p{
+    line-height: 1.5;
+}
+
+.system-link{
+    color: var(--accent);
+    text-decoration:none;
+    transition: text-shadow 0.3s ease;
+}
+.system-link:hover{
+    text-shadow: 0 0 8px var(--accent);
+    /* box-shadow: 0 0 8px var(--accent); */
+}
+
+.system-panel{
+    border: 1px, solid, rgba(0, 255, 102, 0.2);
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* 
+'justify-content: space-between' 
+separa o 1° e 2° elemento entre o começo e o fim da horizontal 
+*/
+.panel-header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    color: var(--secondary);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.user-data p{
+    margin-bottom: 8px;
+    font-family: monospace;
+}
+
+.user-data span{
+    display: inline-block;
+    width: 90px;
+    color: var(--accent);
+    letter-spacing: 2px;
+}
+
+footer{
+    color: #555;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.user-description{
+    max-width: 700px;
+    color: var(--secondary);
+    line-height: 1.5;
+}
+
+.profile-content{
+    display: flex;
+    gap: 60px;
+}
+
+.profile-visual{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 320px;
+    min-height: 320px;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+}
+.profile-image{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border: 1px solid rgba(0, 255, 102, 0.2);
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 102, 0.15);
+}
+.profile-image::before{
+    content: "IMG_001";
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+.profile-image::after{
+    content: "● IMAGE_UP";
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    color: var(--accent);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.profile-image:hover{
+    border-color: rgba(0, 255, 102, 0.6);
+}
+.profile-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+}
+
+.glitch-layer{
+    position: absolute;
+    top:45%;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0, 255, 102, 0.08);
+    transition: opacity 0.1s ease;
+}
+.profile-image:hover .glitch-layer{
+    opacity: 1;
+    transform: translateX(20px);
+}
