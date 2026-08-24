@@ -9,7 +9,7 @@
 :root é bom para armazenar variáveis globais, reduzindo o esforço de ter que mudar 
 tudo na mão depois, podendo utilizar apenas o conceito de "var(--variavel)" 
 */
-:root{
+:root {
     --background: #000F08;
     --text: #FFFFFF;
     --secondary: #888888;
@@ -22,7 +22,7 @@ tudo na mão depois, podendo utilizar apenas o conceito de "var(--variavel)"
     */
     --accent: #00FF66;
     --error: #ff003c;
-    
+
 }
 
 
@@ -32,25 +32,48 @@ The Matrix Green: Background #000B00, Text/Foreground #00FF66, Dim/Border #003B1
 The IBM 3278 Blue: Background #001122, Text/Foreground #00FFFF, Accent #88FFFF
 */
 
-body{
+body {
     /* 
     Cor do fundo do corpo da página. Opções que preferidas: 
     #000000 (preto) e #000F08 (preto esverdeado, "night")  
     */
-    background-color: var(--background); 
+    background-color: var(--background);
     /* Sugestão de color: #33FF33 ou #00FF66 */
     color: var(--text);
-    font-family: monospace;
+    font-family: "IBM Plex Mono", monospace;
     padding: 40px;
+
+
+    position: relative;
 }
 
-header{
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at center,
+            transparent 50%,
+            rgba(0, 0, 0, 0.3) 100%),
+        repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 255, 102, 0.03) 3px,
+            rgba(0, 255, 102, 0.03) 4px);
+}
+
+header {
     margin-bottom: 80px;
 }
 
-header h1{
+header h1 {
     font-size: 48px;
     letter-spacing: 6px;
+    font-family: /*"VT323",*/ monospace;
 }
 
 /* Sugestão de color: #008833*/
@@ -71,7 +94,7 @@ h2 {
     color: var(--accent);
 }
 
-.system-panel h2{
+.system-panel h2 {
     margin-bottom: 30px;
     font-size: 24px;
     letter-spacing: 5px;
@@ -79,75 +102,95 @@ h2 {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.system-panel:hover{
+.system-panel:hover {
     border-color: rgba(0, 255, 102, 0.5);
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
 }
 
-p{
+p {
     line-height: 1.5;
 }
 
-.system-link{
+.system-link {
     color: var(--accent);
-    text-decoration:none;
+    text-decoration: none;
     transition: text-shadow 0.3s ease;
 }
-.system-link:hover{
+
+.system-link:hover {
     text-shadow: 0 0 8px var(--accent);
     /* box-shadow: 0 0 8px var(--accent); */
 }
 
-.system-panel{
-    border: 1px, solid, rgba(0, 255, 102, 0.2);
+.system-panel {
+    border: 1px solid rgba(0, 255, 102, 0.2);
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.02);
+    position: relative;
+    overflow: hidden;
 }
+
+/*
+.system-panel::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    background: repeating-linear-gradient(to bottom,
+            transparent 0px,
+            transparent 3px,
+            rgba(0, 255, 102, 0.03) 3px,
+            rgba(0, 255, 102, 0.03) 4px);
+    pointer-events: none;
+}
+*/
 
 /* 
 'justify-content: space-between' 
 separa o 1° e 2° elemento entre o começo e o fim da horizontal 
 */
-.panel-header{
+.panel-header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
     color: var(--secondary);
+    font-family: "IBM Plex Mono", monospace;
     font-size: 12px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.user-data p{
+.user-data p {
     margin-bottom: 8px;
     font-family: monospace;
 }
 
-.user-data span{
+.user-data span {
     display: inline-block;
     width: 90px;
     color: var(--accent);
     letter-spacing: 2px;
 }
 
-footer{
+footer {
     color: #555;
     border-top: 1px solid #333;
     padding-top: 20px;
 }
 
-.user-description{
+.user-description {
     max-width: 700px;
     color: var(--secondary);
     line-height: 1.5;
 }
 
-.profile-content{
+.profile-content {
     display: flex;
     gap: 60px;
 }
 
-.profile-visual{
+
+
+.profile-visual {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +198,8 @@ footer{
     min-height: 320px;
     border: 1px solid rgba(0, 255, 102, 0.2);
 }
-.profile-image{
+
+.profile-image {
     width: 100%;
     aspect-ratio: 1/1;
     border: 1px solid rgba(0, 255, 102, 0.2);
@@ -163,14 +207,22 @@ footer{
     position: relative;
     transition: border-color 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 255, 102, 0.15);
+
+    /*
+    filter:
+        grayscale(1) sepia(1) hue-rotate(75deg) saturate(4);
+    */
+
 }
-.profile-image::before{
+
+.profile-image::before {
     content: "IMG_001";
     position: absolute;
     top: 10px;
     left: 15px;
 }
-.profile-image::after{
+
+.profile-image::after {
     content: "● IMAGE_UP";
     position: absolute;
     bottom: 10px;
@@ -179,28 +231,54 @@ footer{
     font-size: 10px;
     letter-spacing: 2px;
 }
-.profile-image:hover{
+
+.profile-image:hover {
     border-color: rgba(0, 255, 102, 0.6);
 }
-.profile-image img{
+
+.profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display:block;
+    display: block;
 }
 
-.glitch-layer{
+.glitch-layer {
     position: absolute;
-    top:45%;
-    left: 0;
-    width: 100%;
-    height: 8px;
-    opacity: 0;
+    inset: 0;
     pointer-events: none;
-    background: rgba(0, 255, 102, 0.08);
-    transition: opacity 0.1s ease;
+    overflow: hidden;
 }
-.profile-image:hover .glitch-layer{
-    opacity: 1;
-    transform: translateX(20px);
+
+@keyframes systemPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.system-indicator {
+    color: var(--accent);
+    animation: systemPulse 3s infinite;
+}
+
+
+.glitch-bar {
+    position: absolute;
+    height: 10px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            rgba(0, 255, 102, 0.1),
+            rgba(0, 255, 102, 0.05),
+            transparent
+        );
+    transition: transform 0.15s ease;
 }
