@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -45,14 +47,24 @@
                     <div class="user-data">
                         <p><span>USER</span> KEVIN TORQUATO</p>
                         <p><span>ALIAS</span> KNTRICKSTER</p>
+                        <p><span>AGE</span><data class="tarja-preta"> XX</data></p>
+                        <p><span>LOCATION</span><data class="tarja-preta"> REDACTED REDACTED REDACTED</data></p>
                         <p><span>ROLE</span> COLLEGE STUDENT</p>
-                        <p><span>STATUS</span> LEARNING...</p>
+                        <p><span>NATIONALITY</span> BRAZILIAN</p>
                     </div>
 
                     <div class="user-description">
+                        <p class="subtitle">BACKGROUND</p>
                         <p>
-                            Estudante de Análise e Desenvolvimento de Sistemas
-                            interessado em tecnologia e desenvolvimento de software.
+                            O ambicioso criador desse site, que muitos dizem ser um cara paciente -
+                            e ele gosta de lembrar que "ninguém vence o homem paciente", só o tempo,
+                            mas ele vence todo mundo.<br>
+                            Jovem adulto e estudante veterano no curso de Análise e Desenvolvimento
+                            de Sistemas, atualmente focado em praticar suas habilidades e se desenvolver
+                            aos poucos enquanto faz cada projeto - não é à toa que aqui é um exemplo por si só.<br>
+                            Nas horas vagas, o comportamento observado foi de um indivíduo muito apegado a pessoas,
+                            tecnologias, animais e nerdices. <br>
+                            Elementar, meu caro Watson!
                         </p>
                     </div>
                 </div>
@@ -62,18 +74,81 @@
         </section>
 
         <section id="skills" class="system-panel">
+
+            <div class="panel-header">
+                <span>USER_SKILLS</span>
+                <span>CAPABILITIES.</span>
+                <span>MODULE_02</span>
+            </div>
+        
             <h2>SKILLS</h2>
-            <p>Java, Python, SQL, JavaScript, etc...</p>
+        
+            <div class="skills-container">
+
+                <div class="skill-category">
+                    <h3>PROGRAMMING</h3>
+                    <div class="skill-list" id="programming-skills"></div>
+                </div>
+        
+                <div class="skill-category">
+                    <h3>DATABASE</h3>
+                    <div class="skill-list" id="database-skills"></div>
+                </div>
+        
+                <div class="skill-category">
+                    <h3>TECHNOLOGIES</h3>
+                    <div class="skill-list" id="technology-skills"></div>
+                </div>
+        
+                <div class="skill-category">
+                    <h3>CYBERSECURITY / NETWORKING</h3>
+                    <div class="skill-list" id="security-skills"></div>
+                </div>
+        
+                <div class="skill-category">
+                    <h3>LANGUAGES</h3>
+                    <div class="skill-list" id="language-skills"></div>
+                </div>
+        
+                <div class="skill-category">
+                    <h3>SOFT SKILLS</h3>
+                    <div class="skill-list" id="soft-skills"></div>
+                </div>
+        
+            </div>
+        
         </section>
 
         <section id="projetos" class="system-panel">
+            <div class="panel-header">
+                <span>USER_PROJECTS</span>
+                <span>REPOSITORIES DATABASE.</span>
+                <span>MODULE_03</span>
+            </div>
+
             <h2>PROJETOS</h2>
-            <p>Meus projetos serão apresentados aqui...</p>
+
+            <div class="projects-container" id="projects-container">
+            </div>
+
         </section>
 
         <section id="contato" class="system-panel">
+            <div class="panel-header">
+                <span>USER_CONTACT</span>
+                <span>CONNECT WITH ME.</span>
+                <span>MODULE_04</span>
+            </div>
+
             <h2>CONTATO</h2>
-            <p>Meus contatos serão apresentados aqui...</p>
+            <div class="contact-table">
+                <div class="contact-row-header">
+                    <span>CHANNEL</span>
+                    <span>HANDLE</span>
+                    <span>STATUS</span>
+                </div>
+                <div id="contact-list"></div>
+            </div>
         </section>
     </main>
 
