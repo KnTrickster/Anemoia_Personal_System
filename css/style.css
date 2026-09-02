@@ -503,3 +503,72 @@ footer {
     font-size: 11px;
     letter-spacing: 1px;
 }
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .panel-header {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 25px;
+    }
+
+    .profile-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-visual {
+        width: 100%;
+        max-width: 320px;
+        flex: none;
+        align-self: center;
+    }
+
+    .user-description {
+        max-width: 100%;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact-row-header {
+        display: none;
+    }
+    
+    .contact-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        padding: 14px 6px;
+    }
+    
+    .contact-row span:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    
+    .contact-row span:last-child {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: right;
+    }
+    
+    .contact-row a {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+}

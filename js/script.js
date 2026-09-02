@@ -121,7 +121,8 @@ renderSkills();
 const projects = [
     {
         name: "ANEMOIA",
-        description: "A retro-futuristic personal website built with HTML, CSS and JavaScript, featuring custom CRT effects, glitches, interactive elements and easter eggs.",
+        description: "Um site pessoal retrô-futurista criado com HTML, CSS e JavaScript, apresentando efeitos de CRT personalizados, falhas visuais (glitches), elementos interativos e easter eggs.",
+        //description: "A retro-futuristic personal website built with HTML, CSS and JavaScript, featuring custom CRT effects, glitches, interactive elements and easter eggs.",
         technologies: ["HTML", "CSS", "JavaScript"],
         type: "PERSONAL PROJECT",
         icon: "assets/images/streamline-pixel---free--32x32-SVG/site-icon.svg",
@@ -129,8 +130,9 @@ const projects = [
     },
 
     {
-        name: "CAMPEONATO MUNDIAL",
-        description: "Database modeling project for a fictional league of unconventional sports. Made with friends!",
+        name: "CAMPEONATO MUNDIAL DE ESPORTES IMPOSSÍVEIS",
+        description: "Projeto de modelagem de banco de dados para uma liga fictícia de esportes não convencionais. Feito com amigos!",
+        //description: "Database modeling project for a fictional league of unconventional sports. Made with friends!",
         technologies: ["SQL", "Oracle", "Data Modeling"],
         type: "ACADEMIC PROJECT",
         icon: "assets/images/streamline-pixel---free--32x32-SVG/database-icon.svg",
